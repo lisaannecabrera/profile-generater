@@ -1,0 +1,24 @@
+{
+  "name": "profile-generater",
+  "version": "1.0.0",
+  "description": "Homework assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisaannecabrera/profile-generater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisaannecabrera/profile-generater/issues"
+  },
+  "homepage": "https://github.com/lisaannecabrera/profile-generater#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "inquirer": "^7.0.4"
+  }
+}
