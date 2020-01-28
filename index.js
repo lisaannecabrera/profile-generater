@@ -1,8 +1,8 @@
 "use strict";
 
-const fs = require("fs");
-const inquirer = require("inquirer");
-const axios = require("axios");
+const { writeFile } = require("fs");
+const { prompt } = require("inquirer");
+const { get } = require("axios");
 
 const userQuestions = [
   {
@@ -18,6 +18,14 @@ const userQuestions = [
   }
 ];
 
-inquirer.prompt(userQuestions).then(({ favoriteColor, github }) => {
+prompt(userQuestions).then(async ({ favoriteColor, github }) => {
   console.log(favoriteColor, github);
+  try {
+    const data = await get(
+      `https://api.github.com/users/${github}/repos?per_page=100`
+    );
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
 });
