@@ -17,3 +17,7 @@ const userQuestions = [
     message: "What is your github username?"
   }
 ];
+
+inquirer.prompt(userQuestions).then(({ favoriteColor, github }) => {
+  console.log(favoriteColor, github);
+});
