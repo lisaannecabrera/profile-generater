@@ -21,10 +21,15 @@ const userQuestions = [
 prompt(userQuestions).then(async ({ favoriteColor, github }) => {
   console.log(favoriteColor, github);
   try {
-    const data = await get(
+    const response = await get(
       `https://api.github.com/users/${github}/repos?per_page=100`
     );
-    console.log(data);
+    //their name, location with google maps, their github link, a blog
+    //public repos, followers, github stars, who they are following
+
+    //console.log(response.data[0]);
+    const userName = response.data[0].owner.login;
+    console.log(userName);
   } catch (error) {
     console.error(error);
   }
