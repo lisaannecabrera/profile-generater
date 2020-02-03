@@ -41,15 +41,18 @@ function generateHTML(response, starCount) {
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
       <title>Document</title>
+      <style>
+      .container { background-color: ${userQuestions.choices};}
+       </style>
     </head>
     <body>
       <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">Hi! My name is ${response.name}</h1>
-        <p class="lead">I am from ${response.location}.</p>
+        <h1 class="display-4">Hi! My name is ${response.data.name}</h1>
+        <p class="lead">I am from ${response.data.location}.</p>
         <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
         <ul class="list-group">
-          <li class="list-group-item">My GitHub username is ${response.userName}</li>
+          <li class="list-group-item">My GitHub username is ${response.data.loggin}</li>
           <li class="list-group-item">Starred: ${starCount}</li>
           <li class="list-group-item">Location: ${response.data.location}</li>
           <li class-"list-group-item">Blog: ${response.data.blog}</li>
